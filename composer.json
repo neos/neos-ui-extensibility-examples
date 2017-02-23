@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "neos/neos-ui-extensibilityexamples",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neos\\Neos\\Ui\\ExtensibilityExamples\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Neos.Neos.Ui.ExtensibilityExamples"
+        }
+    }
+}
