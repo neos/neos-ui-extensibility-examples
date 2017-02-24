@@ -3,9 +3,8 @@ import { SketchPicker } from 'react-color';
 
 import {TextInput} from '@neos-project/react-ui-components';
 
-//import TextInput from '@neos-project/react-ui-components/lib/TextInput/';
-//import unescape from 'lodash.unescape';
-//import {neos} from '@neos-project/neos-ui-decorators';
+import {neos} from '@neos-project/neos-ui-decorators';
+import I18n from '@neos-project/neos-ui-i18n';
 
 @neos(globalRegistry => ({
     i18nRegistry: globalRegistry.get('i18n')
@@ -34,7 +33,7 @@ export default class ColorPickerEditor extends PureComponent {
         return (<div>
             <SketchPicker color={value} onChange={this.handleChangeColor}/>
             <TextInput value={value} onChange={this.props.commit}/>
-
+            <I18n id="cancel"/>
         </div>);
     }
 }
