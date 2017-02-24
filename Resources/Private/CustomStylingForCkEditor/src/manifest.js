@@ -1,5 +1,24 @@
 import manifest from '@neos-project/neos-ui-extensibility';
+import {IconButton} from '@neos-project/react-ui-components';
 
 manifest('main', {}, globalRegistry => {
-   console.log('ADDDING TO MANIFEST', globalRegistry);
+   const richtextToolbar = globalRegistry.get('richtextToolbar');
+
+    richtextToolbar.add('Neos.Neos.Ui.ExtensibilityExamples:MyCustomButton1', {
+        formattingRule: 'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan',
+        component: IconButton,
+        callbackPropName: 'onClick',
+
+        icon: 'facebook',
+        hoverStyle: 'brand'
+    });
+
+    const formattingRules = globalRegistry.get('ckEditor').get('formattingRules');
+
+   formattingRules.add('Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan', {
+       style: {element: 'span', attributes: {style: 'background-color: red'}},
+       config: formattingRules.config.addToExtraAllowedContent('span[style]')
+    });
+
+
 });
