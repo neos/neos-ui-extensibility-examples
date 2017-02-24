@@ -13,3 +13,11 @@ Neos:
 
           'Neos.Neos.UI.ExtensibilityExamples:ColorPickerEditor':
             resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ColorPickerEditor/Plugin.js
+
+          'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
+            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.js
+
+        stylesheets:
+
+          'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
+            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.css

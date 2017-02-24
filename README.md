@@ -28,3 +28,7 @@ As we have not published the `@neos-project/neos-ui-extensibility` package on NP
 ## ColorPickerEditor
 
 - a little more advanced example for a color picker editor.
+
+## ReplacingComponentsViaUnplannedExtensibility
+
+- showcasing how to add a custom theme
