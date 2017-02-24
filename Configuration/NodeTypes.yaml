@@ -1,7 +1,21 @@
 'Neos.NodeTypes:TextMixin':
+  ui:
+    inspector:
+      groups:
+        color:
+          label: color
+          icon: 'icon-code'
+          position: 10
+
   properties:
     text:
       ui:
         aloha:
           format:
             'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan': true
+    color:
+      ui:
+        label: 'Color picker'
+        inspector:
+          group: color
+          editor: 'Neos.Neos.Ui.ExtensibilityExamples/ColorPickerEditor'
