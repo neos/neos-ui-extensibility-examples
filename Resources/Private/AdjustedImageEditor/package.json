@@ -7,12 +7,9 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "^1.0.0-beta1"
+    "@neos-project/neos-ui-extensibility": "*"
   },
   "neos": {
-    "buildTargetDirectory": "../../Public/ColorPickerEditor"
-  },
-  "dependencies": {
-    "react-color": "^2.11.1"
+    "buildTargetDirectory": "../../Public/AdjustedImageEditor"
   }
 }

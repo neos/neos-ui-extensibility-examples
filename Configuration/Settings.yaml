@@ -17,6 +17,10 @@ Neos:
           'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
             resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.js
 
+          'Neos.Neos.UI.ExtensibilityExamples:AdjustedImageEditor':
+            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/AdjustedImageEditor/Plugin.js
+
+
         stylesheets:
 
           'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':

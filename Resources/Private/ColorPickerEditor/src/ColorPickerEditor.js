@@ -26,12 +26,13 @@ export default class ColorPickerEditor extends PureComponent {
     };
 
     render() {
-        const {value, commit, validationErrors, options, i18nRegistry, highlight} = this.props;
+        const {value, commit, options, i18nRegistry, highlight} = this.props;
 
         // Placeholder text must be unescaped in case html entities were used
         const placeholder = "HI"; //options && options.placeholder && i18nRegistry.translate(unescape(options.placeholder));
         return (<div>
             <SketchPicker color={value} onChange={this.handleChangeColor}/>
+            TEST TEST TEST
             <TextInput value={value} onChange={this.props.commit}/>
             <I18n id="cancel"/>
         </div>);
