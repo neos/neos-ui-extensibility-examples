@@ -6,14 +6,11 @@ To see the API, check "EXTENSIBILITY.md" in the Neos.Neos.Ui Git Repository.
 
 # How to build the examples
 
-As we have not published the `@neos-project/neos-ui-extensibility` package on NPM yet, you manually need to do the following:
+**Currently, the examples do only work with yarn and not with NPM install.**
 
-- Go to `../Neos.Ui/packages/neos-ui-extensibility`; and run `npm link`
-
-- Now, go to `Resources/Private/[ExampleName]` and run `npm link @neos-project/neos-ui-extensibility`.
-
-- Then, run `npm install` as usual.
-
+- (optional): Use [NVM](https://github.com/creationix/nvm) to ensure you're using the right node.js version: `nvm install`
+- Install yarn globally `npm install -g yarn`
+- Go to `Resources/Private/[ExampleName]` and run `yarn`.
 
 # Examples
 

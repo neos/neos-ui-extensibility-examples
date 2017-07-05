@@ -8,8 +8,8 @@ Neos:
           'Neos.Neos.UI.ExtensibilityExamples:CustomStylingForCkEditor':
             resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/CustomStylingForCkEditor/Plugin.js
 
-          'Neos.Neos.UI.ExtensibilityExamples:CustomEditor':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/CustomEditor/Plugin.js
+#          'Neos.Neos.UI.ExtensibilityExamples:CustomEditor':
+#            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/CustomEditor/Plugin.js
 
           'Neos.Neos.UI.ExtensibilityExamples:ColorPickerEditor':
             resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ColorPickerEditor/Plugin.js
