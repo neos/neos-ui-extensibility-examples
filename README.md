@@ -4,6 +4,15 @@ See examples in "Resources/Private" and Configuration/Settings.yaml.
 
 To see the API, check "EXTENSIBILITY.md" in the Neos.Neos.Ui Git Repository.
 
+## Installation
+
+```
+cd Packages/Application/
+git clone git@github.com:neos/neos-ui-extensibility-examples.git Neos.Neos.Ui.ExtensibilityExamples
+cd ../../
+./flow package:rescan
+```
+
 # How to build the examples
 
 **Currently, the examples do only work with yarn and not with NPM install.**
