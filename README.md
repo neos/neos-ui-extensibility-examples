@@ -10,7 +10,7 @@ To see the API, check "EXTENSIBILITY.md" in the Neos.Neos.Ui Git Repository.
 cd Packages/Application/
 git clone git@github.com:neos/neos-ui-extensibility-examples.git Neos.Neos.Ui.ExtensibilityExamples
 cd ../../
-./flow package:rescan
+./flow flow:package:rescan
 ```
 
 # How to build the examples
