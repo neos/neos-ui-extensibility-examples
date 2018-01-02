@@ -2,7 +2,7 @@
 
 See examples in "Resources/Private" and Configuration/Settings.yaml.
 
-To see the API, check "EXTENSIBILITY.md" in the Neos.Neos.Ui Git Repository.
+To see the API, check ["EXTENSIBILITY.md" in the Neos.Neos.Ui Git Repository](https://github.com/neos/neos-ui/blob/master/EXTENSIBILITY.md).
 
 ## Installation
 
