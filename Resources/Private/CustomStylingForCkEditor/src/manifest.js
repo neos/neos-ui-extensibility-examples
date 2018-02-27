@@ -6,7 +6,7 @@ manifest('main', {}, globalRegistry => {
 
     const richtextToolbar = ckEditorRegistry.get('richtextToolbar');
 
-    richtextToolbar.add('Neos.Neos.Ui.ExtensibilityExamples:MyCustomButton1', {
+    richtextToolbar.set('Neos.Neos.Ui.ExtensibilityExamples:MyCustomButton1', {
         formattingRule: 'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan',
         component: IconButton,
         callbackPropName: 'onClick',
@@ -17,7 +17,7 @@ manifest('main', {}, globalRegistry => {
 
     const formattingRules = ckEditorRegistry.get('formattingRules');
 
-   formattingRules.add('Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan', {
+   formattingRules.set('Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan', {
        style: {element: 'span', attributes: {style: 'background-color: red'}},
        config: formattingRules.config.addToExtraAllowedContent('span[style]')
     });
