@@ -18,9 +18,9 @@
     lodash "^4.11.1"
     os-homedir "^1.0.1"
 
-"@neos-project/build-essentials@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@neos-project/build-essentials/-/build-essentials-1.0.7.tgz#02601c573611cc6e40bbf0d828357d7caab65682"
+"@neos-project/build-essentials@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@neos-project/build-essentials/-/build-essentials-1.0.8.tgz#5675751f0b488db91e075da7d1e8f99a7d9a08ad"
   dependencies:
     babel-core "^6.13.2"
     babel-eslint "^7.1.1"
@@ -43,12 +43,12 @@
     webpack "^3.8.1"
     webpack-livereload-plugin "^1.0.0"
 
-"@neos-project/neos-ui-extensibility@~1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-1.0.7.tgz#d1205d7513d7b0f18a29a4439d048bce5a058da0"
+"@neos-project/neos-ui-extensibility@~1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-1.0.8.tgz#f2d1de9fe3a88c40c37eb201a7a8a085995b24d4"
   dependencies:
-    "@neos-project/build-essentials" "1.0.7"
-    "@neos-project/positional-array-sorter" "1.0.7"
+    "@neos-project/build-essentials" "1.0.8"
+    "@neos-project/positional-array-sorter" "1.0.8"
     babel-core "^6.13.2"
     babel-eslint "^7.1.1"
     babel-loader "^7.1.2"
@@ -66,13 +66,13 @@
     react-dev-utils "^0.5.0"
     style-loader "^0.19.0"
 
-"@neos-project/positional-array-sorter@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@neos-project/positional-array-sorter/-/positional-array-sorter-1.0.7.tgz#07db426eec1d0217151d3477abe954d37672155f"
+"@neos-project/positional-array-sorter@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@neos-project/positional-array-sorter/-/positional-array-sorter-1.0.8.tgz#dd98f76603cb173ffb14b91445431e411e3e42df"
 
-"@neos-project/react-ui-components@~1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@neos-project/react-ui-components/-/react-ui-components-1.0.7.tgz#507693fe0882639a6409066783b294aa5d56bcd1"
+"@neos-project/react-ui-components@~1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@neos-project/react-ui-components/-/react-ui-components-1.0.8.tgz#1628504bb36ecb2b43830f35bcdb0165a891cd27"
 
 abbrev@1:
   version "1.1.0"

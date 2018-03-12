@@ -119,7 +119,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     var standardImageEditorDefinition = editorsRegistry.get('Neos.Neos/Inspector/Editors/ImageEditor');
 
-    editorsRegistry.add('Neos.Neos/Inspector/Editors/ImageEditor', _extends({}, standardImageEditorDefinition, {
+    editorsRegistry.set('Neos.Neos/Inspector/Editors/ImageEditor', _extends({}, standardImageEditorDefinition, {
         component: (0, _ImageEditor2.default)(standardImageEditorDefinition.component)
     }));
 });
@@ -197,7 +197,7 @@ function createConsumerApi(manifests, exposureMap) {
 
 module.exports = {
 	"name": "@neos-project/neos-ui-extensibility",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Extensibility mechanisms for the Neos CMS UI",
 	"main": "./src/index.js",
 	"scripts": {
@@ -211,12 +211,12 @@ module.exports = {
 		"jest": "NODE_ENV=test jest"
 	},
 	"devDependencies": {
-		"@neos-project/babel-preset-neos-ui": "1.0.7",
-		"@neos-project/jest-preset-neos-ui": "1.0.7"
+		"@neos-project/babel-preset-neos-ui": "1.0.8",
+		"@neos-project/jest-preset-neos-ui": "1.0.8"
 	},
 	"dependencies": {
-		"@neos-project/build-essentials": "1.0.7",
-		"@neos-project/positional-array-sorter": "1.0.7",
+		"@neos-project/build-essentials": "1.0.8",
+		"@neos-project/positional-array-sorter": "1.0.8",
 		"babel-core": "^6.13.2",
 		"babel-eslint": "^7.1.1",
 		"babel-loader": "^7.1.2",
@@ -283,11 +283,15 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactUiComponents = __webpack_require__(9);
+var _propTypes = __webpack_require__(9);
 
-var _neosUiDecorators = __webpack_require__(10);
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _neosUiI18n = __webpack_require__(11);
+var _reactUiComponents = __webpack_require__(10);
+
+var _neosUiDecorators = __webpack_require__(11);
+
+var _neosUiI18n = __webpack_require__(12);
 
 var _neosUiI18n2 = _interopRequireDefault(_neosUiI18n);
 
@@ -347,13 +351,13 @@ function makeCustomImageEditor(DefaultImageEditor) {
 
         return MyImageEditor;
     }(_react.PureComponent), _class.propTypes = {
-        value: _react.PropTypes.string,
-        commit: _react.PropTypes.func.isRequired,
-        validationErrors: _react.PropTypes.array,
-        highlight: _react.PropTypes.bool,
-        options: _react.PropTypes.object,
+        value: _propTypes2.default.string,
+        commit: _propTypes2.default.func.isRequired,
+        validationErrors: _propTypes2.default.array,
+        highlight: _propTypes2.default.bool,
+        options: _propTypes2.default.object,
 
-        i18nRegistry: _react.PropTypes.object.isRequired
+        i18nRegistry: _propTypes2.default.object.isRequired
     }, _temp2;
 }
 
@@ -385,7 +389,7 @@ var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().ReactUiComponents;
+module.exports = (0, _readFromConsumerApi2.default)('vendor')().PropTypes;
 
 /***/ }),
 /* 10 */
@@ -400,10 +404,25 @@ var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().NeosUiDecorators;
+module.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().ReactUiComponents;
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _readFromConsumerApi = __webpack_require__(0);
+
+var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = (0, _readFromConsumerApi2.default)('NeosProjectPackages')().NeosUiDecorators;
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

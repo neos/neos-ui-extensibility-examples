@@ -5,23 +5,24 @@ Neos:
       resources:
         javascript:
 
-          'Neos.Neos.UI.ExtensibilityExamples:CustomStylingForCkEditor':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/CustomStylingForCkEditor/Plugin.js
+          'Neos.Neos.Ui.ExtensibilityExamples:CustomStylingForCkEditor':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/CustomStylingForCkEditor/Plugin.js
 
-#          'Neos.Neos.UI.ExtensibilityExamples:CustomEditor':
-#            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/CustomEditor/Plugin.js
+          # Overwrites all textfields, so comment out if needed :)
+          # 'Neos.Neos.Ui.ExtensibilityExamples:CustomEditor':
+          #  resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/CustomEditor/Plugin.js
 
-          'Neos.Neos.UI.ExtensibilityExamples:ColorPickerEditor':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ColorPickerEditor/Plugin.js
+          'Neos.Neos.Ui.ExtensibilityExamples:ColorPickerEditor':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/ColorPickerEditor/Plugin.js
 
-          'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.js
+          'Neos.Neos.Ui.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.js
 
-          'Neos.Neos.UI.ExtensibilityExamples:AdjustedImageEditor':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/AdjustedImageEditor/Plugin.js
+          'Neos.Neos.Ui.ExtensibilityExamples:AdjustedImageEditor':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/AdjustedImageEditor/Plugin.js
 
 
         stylesheets:
 
-          'Neos.Neos.UI.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
-            resource: resource://Neos.Neos.UI.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.css
+          'Neos.Neos.Ui.ExtensibilityExamples:ReplacingComponentsViaUnplannedExtensibility':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/ReplacingComponentsViaUnplannedExtensibility/Plugin.css

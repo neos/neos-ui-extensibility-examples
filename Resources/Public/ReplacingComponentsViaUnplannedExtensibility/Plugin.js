@@ -117,7 +117,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     var OriginalLeftSideBar = containerRegistry.get('LeftSideBar');
 
-    containerRegistry.add('LeftSideBar', (0, _AdjustedSidebar2.default)(OriginalLeftSideBar));
+    containerRegistry.set('LeftSideBar', (0, _AdjustedSidebar2.default)(OriginalLeftSideBar));
 });
 
 /***/ }),
@@ -277,7 +277,11 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactCssThemr = __webpack_require__(9);
+var _propTypes = __webpack_require__(9);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactCssThemr = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -288,7 +292,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var contextTheme = {
-    '@neos-project/react-ui-components/button': __webpack_require__(10)
+    '@neos-project/react-ui-components/button': __webpack_require__(11)
 };
 
 var makeAdjustedSidebar = function makeAdjustedSidebar(OriginalLeftSideBar) {
@@ -347,16 +351,31 @@ var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = (0, _readFromConsumerApi2.default)('vendor')().reactCssThemr;
+module.exports = (0, _readFromConsumerApi2.default)('vendor')().PropTypes;
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+var _readFromConsumerApi = __webpack_require__(0);
+
+var _readFromConsumerApi2 = _interopRequireDefault(_readFromConsumerApi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = (0, _readFromConsumerApi2.default)('vendor')().reactCssThemr;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(11);
+var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -364,7 +383,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
+var update = __webpack_require__(14)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -381,10 +400,10 @@ if(false) {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -397,7 +416,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /*
@@ -479,7 +498,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -535,7 +554,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(14);
+var	fixUrls = __webpack_require__(15);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -851,7 +870,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 
