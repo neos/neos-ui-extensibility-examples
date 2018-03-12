@@ -7,7 +7,7 @@ manifest('Neos.Neos.Ui.ExtensibilityExamples:AdjustedImageEditor', {}, globalReg
 
     const standardImageEditorDefinition = editorsRegistry.get('Neos.Neos/Inspector/Editors/ImageEditor');
 
-    editorsRegistry.add('Neos.Neos/Inspector/Editors/ImageEditor', {
+    editorsRegistry.set('Neos.Neos/Inspector/Editors/ImageEditor', {
         ...standardImageEditorDefinition,
         component: makeCustomImageEditor(standardImageEditorDefinition.component)
     });
