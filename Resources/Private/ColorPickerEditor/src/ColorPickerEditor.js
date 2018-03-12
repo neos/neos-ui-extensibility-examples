@@ -1,4 +1,5 @@
-import React, {PropTypes, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import { SketchPicker } from 'react-color';
 
 export default class ColorPickerEditor extends PureComponent {

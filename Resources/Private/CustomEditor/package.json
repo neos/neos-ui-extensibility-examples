@@ -7,7 +7,7 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "~1.0.7"
+    "@neos-project/neos-ui-extensibility": "~1.0.8"
   },
   "neos": {
     "buildTargetDirectory": "../../Public/CustomEditor"
