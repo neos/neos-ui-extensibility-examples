@@ -7,10 +7,12 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "~1.0.8",
-    "@neos-project/react-ui-components": "~1.0.8"
+    "@neos-project/neos-ui-extensibility": "^1.3.0"
   },
   "neos": {
     "buildTargetDirectory": "../../Public/CustomStylingForCkEditor"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^10.0.0"
   }
 }
