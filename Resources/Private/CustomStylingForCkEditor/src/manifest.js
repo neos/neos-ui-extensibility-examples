@@ -1,25 +1,28 @@
 import manifest from '@neos-project/neos-ui-extensibility';
-import {IconButton} from '@neos-project/react-ui-components';
+import {$add, $get} from 'plow-js';
+import ExamplePlugin from './examplePlugin';
+import ExampleButton from './ExampleButton';
 
-manifest('main', {}, globalRegistry => {
-    const ckEditorRegistry = globalRegistry.get('ckEditor');
+const addPlugin = (Plugin, isEnabled) => (ckEditorConfiguration, options) => {
+    // we duplicate editorOptions here so it would be possible to write smth like `$get('formatting.sup')`
+    if (!isEnabled || isEnabled(options.editorOptions, options)) {
+        ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
+        return $add('plugins', Plugin, ckEditorConfiguration);
+    }
+    return ckEditorConfiguration;
+};
 
-    const richtextToolbar = ckEditorRegistry.get('richtextToolbar');
+manifest('Neos.Neos.Ui.ExtensibilityExamples:CustomStylingForCkEditor', {}, globalRegistry => {
+    const richtextToolbar = globalRegistry.get('ckEditor5').get('richtextToolbar');
 
-    richtextToolbar.set('Neos.Neos.Ui.ExtensibilityExamples:MyCustomButton1', {
-        formattingRule: 'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan',
-        component: IconButton,
-        callbackPropName: 'onClick',
+    richtextToolbar.set('exampleExtension', {
+        commandName: 'exampleCommand',
+        component: ExampleButton,
+        icon: 'plus-square',
+        tooltip: 'Create an example command',
+        isVisible: $get('formatting.examplePlugin'),
+    }, 'before strong');
 
-        icon: 'facebook',
-        hoverStyle: 'brand'
-    });
-
-    const formattingRules = ckEditorRegistry.get('formattingRules');
-
-   formattingRules.set('Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan', {
-       style: {element: 'span', attributes: {style: 'background-color: red'}},
-       config: formattingRules.config.addToExtraAllowedContent('span[style]')
-    });
-
+    const config = globalRegistry.get('ckEditor5').get('config');
+    config.set('exampleExtension', addPlugin(ExamplePlugin));
 });
