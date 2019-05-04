@@ -1,4 +1,4 @@
-'Neos.NodeTypes:TextMixin':
+'Neos.NodeTypes.BaseMixins:TextMixin':
   ui:
     inspector:
       groups:
@@ -10,9 +10,10 @@
   properties:
     text:
       ui:
-        aloha:
-          format:
-            'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan': true
+        inline:
+          editorOptions:
+            formatting:
+              'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan': true
     color:
       ui:
         reloadIfChanged: true

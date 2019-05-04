@@ -17,15 +17,17 @@ cd ../../
 
 **Currently, the examples do only work with yarn and not with NPM install.**
 
+- Go to `Resources/Private/[ExampleName]`
 - (optional): Use [NVM](https://github.com/creationix/nvm) to ensure you're using the right node.js version: `nvm install`
 - Install yarn globally `npm install -g yarn`
-- Go to `Resources/Private/[ExampleName]` and run `yarn`.
+- In the folder `Resources/Private/[ExampleName]`, run `yarn`.
+- Then, use `npm run build` or `npm run watch`.
 
 # Examples
 
 ## CustomStylingForEditor
 
-- Adds custom button for CKEditor, to add a custom CSS style
+- Adds custom button for CKEditor 5, to add a custom CSS style
 
 ## CustomEditor
 
