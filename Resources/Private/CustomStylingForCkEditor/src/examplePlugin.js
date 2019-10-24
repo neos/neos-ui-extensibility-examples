@@ -1,4 +1,4 @@
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import {Plugin} from 'ckeditor5-exports';
 import AttributeCommand from '@ckeditor/ckeditor5-basic-styles/src/attributecommand';
 
 export default class Example extends Plugin {
