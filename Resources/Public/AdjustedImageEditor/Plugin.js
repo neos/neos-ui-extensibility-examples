@@ -195,52 +195,7 @@ function createConsumerApi(manifests, exposureMap) {
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = {
-	"name": "@neos-project/neos-ui-extensibility",
-	"version": "1.0.8",
-	"description": "Extensibility mechanisms for the Neos CMS UI",
-	"main": "./src/index.js",
-	"scripts": {
-		"prebuild": "check-dependencies && yarn clean",
-		"test": "yarn jest -- -w 2 --coverage",
-		"test:watch": "yarn jest -- --watch",
-		"build": "exit 0",
-		"build:watch": "exit 0",
-		"clean": "rimraf ./lib ./dist",
-		"lint": "eslint src",
-		"jest": "NODE_ENV=test jest"
-	},
-	"devDependencies": {
-		"@neos-project/babel-preset-neos-ui": "1.0.8",
-		"@neos-project/jest-preset-neos-ui": "1.0.8"
-	},
-	"dependencies": {
-		"@neos-project/build-essentials": "1.0.8",
-		"@neos-project/positional-array-sorter": "1.0.8",
-		"babel-core": "^6.13.2",
-		"babel-eslint": "^7.1.1",
-		"babel-loader": "^7.1.2",
-		"babel-plugin-transform-decorators-legacy": "^1.3.4",
-		"babel-plugin-transform-object-rest-spread": "^6.20.1",
-		"babel-plugin-webpack-alias": "^2.1.1",
-		"babel-preset-es2015": "^6.13.2",
-		"babel-preset-react": "^6.3.13",
-		"babel-preset-stage-0": "^6.3.13",
-		"chalk": "^1.1.3",
-		"css-loader": "^0.28.4",
-		"file-loader": "^1.1.5",
-		"json-loader": "^0.5.4",
-		"postcss-loader": "^2.0.10",
-		"react-dev-utils": "^0.5.0",
-		"style-loader": "^0.19.0"
-	},
-	"bin": {
-		"neos-react-scripts": "./bin/neos-react-scripts.js"
-	},
-	"jest": {
-		"preset": "@neos-project/jest-preset-neos-ui"
-	}
-};
+module.exports = {"name":"@neos-project/neos-ui-extensibility","version":"1.0.14","description":"Extensibility mechanisms for the Neos CMS UI","main":"./src/index.js","scripts":{"prebuild":"check-dependencies && yarn clean","test":"yarn jest -- -w 2 --coverage","test:watch":"yarn jest -- --watch","build":"exit 0","build:watch":"exit 0","clean":"rimraf ./lib ./dist","lint":"eslint src","jest":"NODE_ENV=test jest"},"devDependencies":{"@neos-project/babel-preset-neos-ui":"1.0.14","@neos-project/jest-preset-neos-ui":"1.0.14"},"dependencies":{"@neos-project/build-essentials":"1.0.14","@neos-project/positional-array-sorter":"1.0.14","babel-core":"^6.13.2","babel-eslint":"^7.1.1","babel-loader":"^7.1.2","babel-plugin-transform-decorators-legacy":"^1.3.4","babel-plugin-transform-object-rest-spread":"^6.20.1","babel-plugin-webpack-alias":"^2.1.1","babel-preset-es2015":"^6.13.2","babel-preset-react":"^6.3.13","babel-preset-stage-0":"^6.3.13","chalk":"^1.1.3","css-loader":"^0.28.4","file-loader":"^1.1.5","json-loader":"^0.5.4","postcss-loader":"^2.0.10","react-dev-utils":"^0.5.0","style-loader":"^0.19.0"},"bin":{"neos-react-scripts":"./bin/neos-react-scripts.js"},"jest":{"preset":"@neos-project/jest-preset-neos-ui"}}
 
 /***/ }),
 /* 6 */

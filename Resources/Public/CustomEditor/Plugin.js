@@ -193,7 +193,7 @@ function createConsumerApi(manifests, exposureMap) {
 
 module.exports = {
 	"name": "@neos-project/neos-ui-extensibility",
-	"version": "1.0.8",
+	"version": "1.0.14",
 	"description": "Extensibility mechanisms for the Neos CMS UI",
 	"main": "./src/index.js",
 	"scripts": {
@@ -207,12 +207,12 @@ module.exports = {
 		"jest": "NODE_ENV=test jest"
 	},
 	"devDependencies": {
-		"@neos-project/babel-preset-neos-ui": "1.0.8",
-		"@neos-project/jest-preset-neos-ui": "1.0.8"
+		"@neos-project/babel-preset-neos-ui": "1.0.14",
+		"@neos-project/jest-preset-neos-ui": "1.0.14"
 	},
 	"dependencies": {
-		"@neos-project/build-essentials": "1.0.8",
-		"@neos-project/positional-array-sorter": "1.0.8",
+		"@neos-project/build-essentials": "1.0.14",
+		"@neos-project/positional-array-sorter": "1.0.14",
 		"babel-core": "^6.13.2",
 		"babel-eslint": "^7.1.1",
 		"babel-loader": "^7.1.2",

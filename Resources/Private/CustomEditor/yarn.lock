@@ -18,9 +18,10 @@
     lodash "^4.11.1"
     os-homedir "^1.0.1"
 
-"@neos-project/build-essentials@1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@neos-project/build-essentials/-/build-essentials-1.0.8.tgz#5675751f0b488db91e075da7d1e8f99a7d9a08ad"
+"@neos-project/build-essentials@1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@neos-project/build-essentials/-/build-essentials-1.0.14.tgz#f404fe491ee46ae36a39bcedf9e5262ee02e3038"
+  integrity sha512-1GZHKH6L7oHTV1n+xRx4Tpn76DBi2zN8eihPESFZGw/w37mi5EH4Ohgxf5/oPsDRhbrRhJeEhQrZ3JeGts7gjA==
   dependencies:
     babel-core "^6.13.2"
     babel-eslint "^7.1.1"
@@ -38,17 +39,18 @@
     postcss-nested "^3.0.0"
     rimraf "^2.5.4"
     stylelint "^8.4.0"
-    url-loader "^0.6.2"
+    url-loader "^1.0.1"
     watch "^1.0.2"
     webpack "^3.8.1"
     webpack-livereload-plugin "^1.0.0"
 
-"@neos-project/neos-ui-extensibility@~1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-1.0.8.tgz#f2d1de9fe3a88c40c37eb201a7a8a085995b24d4"
+"@neos-project/neos-ui-extensibility@~1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-1.0.14.tgz#3b65432e8c8ceef014861061e0213a1b75a05ba0"
+  integrity sha512-G1C+ZkYjTGST3E1vfgolygcBqKn7XphMoLZTcz5ddh/Phabo23N+54zwi1mLYjAtefuIY/go0t1NQeDyIexmRg==
   dependencies:
-    "@neos-project/build-essentials" "1.0.8"
-    "@neos-project/positional-array-sorter" "1.0.8"
+    "@neos-project/build-essentials" "1.0.14"
+    "@neos-project/positional-array-sorter" "1.0.14"
     babel-core "^6.13.2"
     babel-eslint "^7.1.1"
     babel-loader "^7.1.2"
@@ -66,9 +68,10 @@
     react-dev-utils "^0.5.0"
     style-loader "^0.19.0"
 
-"@neos-project/positional-array-sorter@1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@neos-project/positional-array-sorter/-/positional-array-sorter-1.0.8.tgz#dd98f76603cb173ffb14b91445431e411e3e42df"
+"@neos-project/positional-array-sorter@1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@neos-project/positional-array-sorter/-/positional-array-sorter-1.0.14.tgz#2a8a03c2e1edff9b5f680d2437df7b0dfc519aa2"
+  integrity sha512-XlySQOr+0fMaAa+wHnSCFsNsCUMDzWO1fGI6eDDau3Umv67L2qz+Edko1pch4iUubr7yIYWKT9M8K560+WQ+Pg==
 
 abbrev@1:
   version "1.1.0"
@@ -97,6 +100,11 @@ acorn@^4.0.3:
 acorn@^5.0.0, acorn@^5.4.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.0.tgz#1abb587fbf051f94e3de20e6b26ef910b1828298"
+
+ajv-errors@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
+  integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
 
 ajv-keywords@^1.0.0:
   version "1.5.1"
@@ -3364,9 +3372,10 @@ mime-types@^2.1.11, mime-types@^2.1.12, mime-types@~2.1.15, mime-types@~2.1.7:
   dependencies:
     mime-db "~1.27.0"
 
-mime@^1.4.1:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
+mime@^2.0.3:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
+  integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -4745,6 +4754,15 @@ schema-utils@^0.4.0, schema-utils@^0.4.5:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
+schema-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
+  integrity sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==
+  dependencies:
+    ajv "^6.1.0"
+    ajv-errors "^1.0.0"
+    ajv-keywords "^3.1.0"
+
 "semver@2 || 3 || 4 || 5", semver@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
@@ -5337,13 +5355,14 @@ untildify@^2.1.0:
   dependencies:
     os-homedir "^1.0.0"
 
-url-loader@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.6.2.tgz#a007a7109620e9d988d14bce677a1decb9a993f7"
+url-loader@^1.0.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-1.1.2.tgz#b971d191b83af693c5e3fea4064be9e1f2d7f8d8"
+  integrity sha512-dXHkKmw8FhPqu8asTc1puBfe3TehOCo2+RmOOev5suNCIYBcT626kxiWg1NBVkwc4rO8BGa7gP70W7VXuqHrjg==
   dependencies:
-    loader-utils "^1.0.2"
-    mime "^1.4.1"
-    schema-utils "^0.3.0"
+    loader-utils "^1.1.0"
+    mime "^2.0.3"
+    schema-utils "^1.0.0"
 
 url-parse@1.0.x:
   version "1.0.5"
