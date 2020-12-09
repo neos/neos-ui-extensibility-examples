@@ -12,18 +12,18 @@ import PropTypes from 'prop-types';
 export default class TextField extends PureComponent {
 
     static propTypes = {
-        value: PropTypes.string,
+        className: PropTypes.string,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         commit: PropTypes.func.isRequired,
-        validationErrors: PropTypes.array,
-        highlight: PropTypes.bool,
         options: PropTypes.object,
+        onKeyPress: PropTypes.func,
+        onEnterKey: PropTypes.func,
+        id: PropTypes.string,
 
-        i18nRegistry: PropTypes.object.isRequired
+        i18nRegistry: PropTypes.object.isRequired,
     };
 
     render() {
-        const {value, commit, validationErrors, options, i18nRegistry, highlight} = this.props;
-
         // Placeholder text must be unescaped in case html entities were used
         const placeholder = "HI"; //options && options.placeholder && i18nRegistry.translate(unescape(options.placeholder));
         return (<div>HALLO MY TEXT FIELDX {placeholder}</div>);
