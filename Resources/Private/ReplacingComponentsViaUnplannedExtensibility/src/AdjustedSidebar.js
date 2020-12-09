@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import { ThemeProvider } from 'react-css-themr';
+import { ThemeProvider } from '@friendsofreactjs/react-css-themr';
 
 const contextTheme = {
   '@neos-project/react-ui-components/button': require('./button-extension.css')
