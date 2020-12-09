@@ -7,7 +7,7 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "~1.0.14"
+    "@neos-project/neos-ui-extensibility": "^5.3.4"
   },
   "neos": {
     "buildTargetDirectory": "../../Public/AdjustedImageEditor"
