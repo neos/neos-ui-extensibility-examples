@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/button-extension.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA,C","file":"./Plugin.css","sourcesContent":[".button-extension__btn___3poHd {\n    background: grey;\n}\n.button-extension__btn___3poHd i {\n    color: black !important;\n}"],"sourceRoot":""}
