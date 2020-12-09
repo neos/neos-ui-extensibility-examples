@@ -9,10 +9,12 @@ export default function makeCustomImageEditor(DefaultImageEditor) {
     return class MyImageEditor extends PureComponent {
 
         static propTypes = {
-            value: PropTypes.string,
+            value: PropTypes.oneOfType([
+                PropTypes.shape({__identifier: PropTypes.string}),
+                PropTypes.string
+            ]),
             commit: PropTypes.func.isRequired,
             validationErrors: PropTypes.array,
-            highlight: PropTypes.bool,
             options: PropTypes.object,
 
             i18nRegistry: PropTypes.object.isRequired
@@ -23,7 +25,7 @@ export default function makeCustomImageEditor(DefaultImageEditor) {
         };
 
         render() {
-            const {value, commit, options, i18nRegistry, highlight} = this.props;
+            const {value, commit, options, i18nRegistry} = this.props;
 
             return (<div>
                 <DefaultImageEditor {...this.props} />
