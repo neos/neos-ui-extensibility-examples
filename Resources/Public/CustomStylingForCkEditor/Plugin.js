@@ -2836,11 +2836,11 @@ exports.__esModule = true;
 var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 function readFromConsumerApi(key) {
     return function () {
+        var _a;
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        var _a;
         if (window['@Neos:HostPluginAPI'] && window['@Neos:HostPluginAPI']["@" + key]) {
             return (_a = window['@Neos:HostPluginAPI'])["@" + key].apply(_a, tslib_1.__spread(args));
         }
@@ -3183,13 +3183,13 @@ module.exports = (0, _readFromConsumerApi2.default)('vendor')().React;
 exports.__esModule = true;
 var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var positionalArraySorter = function positionalArraySorter(subject, position, idKey) {
+    var e_1, _a, e_2, _b, e_3, _c, e_4, _d, e_5, _e, e_6, _f, e_7, _g;
     if (position === void 0) {
         position = 'position';
     }
     if (idKey === void 0) {
         idKey = 'key';
     }
-    var e_1, _a, e_2, _b, e_3, _c, e_4, _d, e_5, _e, e_6, _f, e_7, _g;
     var positionAccessor = typeof position === 'string' ? function (value) {
         return value[position];
     } : position;
@@ -3368,7 +3368,7 @@ var positionalArraySorter = function positionalArraySorter(subject, position, id
                 continue;
             }
             try {
-                for (var _r = tslib_1.__values(sortedWeights(beforeKeys[key], false)), _s = _r.next(); !_s.done; _s = _r.next()) {
+                for (var _r = (e_5 = void 0, tslib_1.__values(sortedWeights(beforeKeys[key], false))), _s = _r.next(); !_s.done; _s = _r.next()) {
                     var i = _s.value;
                     addToResults(beforeKeys[key][i], resultStart);
                 }
@@ -3398,7 +3398,7 @@ var positionalArraySorter = function positionalArraySorter(subject, position, id
                 continue;
             }
             try {
-                for (var _v = tslib_1.__values(sortedWeights(afterKeys[key], false)), _w = _v.next(); !_w.done; _w = _v.next()) {
+                for (var _v = (e_7 = void 0, tslib_1.__values(sortedWeights(afterKeys[key], false))), _w = _v.next(); !_w.done; _w = _v.next()) {
                     var i = _w.value;
                     addToResults(afterKeys[key][i], resultMiddle);
                 }

@@ -242,10 +242,10 @@
     webpack "^4.41.5"
     webpack-livereload-plugin "^2.2.0"
 
-"@neos-project/neos-ui-extensibility@^5.3.4":
-  version "5.3.4"
-  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-5.3.4.tgz#2603b0e325019f478f5a1d40c717eb4a56f68a49"
-  integrity sha512-hZMOxH+5VbQ3wlhfnTDTOlvwR05FKmzkfs3UzyrPmWqOvGBH2i1e7yTsEGkcs6EZSEbsA4nXTnW6HkeMmDjo7g==
+"@neos-project/neos-ui-extensibility@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@neos-project/neos-ui-extensibility/-/neos-ui-extensibility-7.0.0.tgz#afb14052e1669680cfe7d1ca07f9b6acf3976efc"
+  integrity sha512-cgpNU6kLsscQfk/ybcVJNHXEXG/QtyZJ4KImdLJ1dpk1yb4oBw9swryASPTP+ADEL5fT7zp5/tQSX8OdZ9thvw==
   dependencies:
     "@neos-project/build-essentials" "5.2.5"
     "@neos-project/positional-array-sorter" "5.2.5"
