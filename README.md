@@ -29,6 +29,10 @@ cd ../../
 
 - Adds custom button for CKEditor 5, to add a custom CSS style
 
+## ModifyDataWithCommandCKEditor
+
+- Adds custom button for CKEditor 5 to manipulate the content. In this case we change the content to uppercase text.
+
 ## CustomEditor
 
 - adds custom editor for inspector

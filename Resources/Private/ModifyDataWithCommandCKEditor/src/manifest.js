@@ -15,13 +15,14 @@ const addPlugin = (Plugin, isEnabled) => (ckEditorConfiguration, options) => {
 manifest('Neos.Neos.Ui.ExtensibilityExamples:ModifyDataWithCommandCKEditor', {}, globalRegistry => {
     const richtextToolbar = globalRegistry.get('ckEditor5').get('richtextToolbar');
 
-    richtextToolbar.set('exampleExtension', {
+    richtextToolbar.set('modifyDataPlugin', {
         commandName: 'modifyDataCommand',
+        isActive: $get('highlightCommand'),
+        isVisible: $get(['formatting', 'Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand']),
         component: ModifyDataButton,
         icon: 'search-plus',
         tooltip: 'Create an example command',
-        isVisible: $get('formatting.examplePlugin'),
-    });
+    }, 'before strong');
 
     const config = globalRegistry.get('ckEditor5').get('config');
     config.set('modifyDataPlugin', addPlugin(ModifyDataPlugin));

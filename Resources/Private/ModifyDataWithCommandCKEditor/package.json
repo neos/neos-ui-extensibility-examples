@@ -10,6 +10,6 @@
     "@neos-project/neos-ui-extensibility": "^5.3.4"
   },
   "neos": {
-    "buildTargetDirectory": "../../Public/CustomStylingForCkEditor"
+    "buildTargetDirectory": "../../Public/ModifyDataWithCommandCKEditor"
   }
 }

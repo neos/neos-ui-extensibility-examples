@@ -3,7 +3,6 @@ import {Command, Plugin} from 'ckeditor5-exports';
 class ModifyDataCommand extends Command {
     execute(callback) {
         let data = this.editor.getData();
-        console.log(data);
         this.editor.setData(data.toUpperCase());
     }
 }
