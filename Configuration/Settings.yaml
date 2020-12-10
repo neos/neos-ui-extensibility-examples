@@ -21,6 +21,9 @@ Neos:
           'Neos.Neos.Ui.ExtensibilityExamples:AdjustedImageEditor':
             resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/AdjustedImageEditor/Plugin.js
 
+          'Neos.Neos.Ui.ExtensibilityExamples:ModifyDataWithCommandCKEditor':
+            resource: resource://Neos.Neos.Ui.ExtensibilityExamples/Public/ModifyDataWithCommandCKEditor/Plugin.js
+
 
         stylesheets:
 

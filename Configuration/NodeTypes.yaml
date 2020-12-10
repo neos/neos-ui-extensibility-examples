@@ -14,6 +14,7 @@
           editorOptions:
             formatting:
               'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan': true
+              'Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand': true
     color:
       ui:
         reloadIfChanged: true

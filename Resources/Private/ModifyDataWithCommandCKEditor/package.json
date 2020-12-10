@@ -1,0 +1,15 @@
+{
+  "description": "Example 1",
+  "license": "GNU GPLv3",
+  "private": true,
+  "scripts": {
+    "build": "neos-react-scripts build",
+    "watch": "neos-react-scripts watch"
+  },
+  "devDependencies": {
+    "@neos-project/neos-ui-extensibility": "^5.3.4"
+  },
+  "neos": {
+    "buildTargetDirectory": "../../Public/ModifyDataWithCommandCKEditor"
+  }
+}
