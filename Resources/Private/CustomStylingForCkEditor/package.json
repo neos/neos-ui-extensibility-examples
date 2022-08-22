@@ -13,6 +13,6 @@
     "buildTargetDirectory": "../../Public/CustomStylingForCkEditor"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-basic-styles": "^10.1.0"
+    "@ckeditor/ckeditor5-basic-styles": "^26.0.0"
   }
 }
