@@ -1,7 +1,9 @@
 {
   "scripts": {
     "build": "neos-react-scripts build",
-    "watch": "neos-react-scripts watch"
+    "watch": "neos-react-scripts watch",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@neos-project/neos-ui-extensibility": "^7.0.0"
@@ -10,6 +12,8 @@
     "buildTargetDirectory": "../../Public/ColorPickerEditor"
   },
   "dependencies": {
-    "react-color": "^2.19.3"
-  }
+    "react-color": "^2.19.3",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
