@@ -96,9 +96,11 @@
 "use strict";
 
 
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var manifest_1 = tslib_1.__importDefault(__webpack_require__(/*! ./manifest */ "./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js"));
+var manifest_1 = __importDefault(__webpack_require__(/*! ./manifest */ "./node_modules/@neos-project/neos-ui-extensibility/dist/manifest.js"));
 var createReadOnlyValue = function createReadOnlyValue(value) {
     return {
         value: value,
@@ -112,7 +114,7 @@ function createConsumerApi(manifests, exposureMap) {
     Object.keys(exposureMap).forEach(function (key) {
         Object.defineProperty(api, key, createReadOnlyValue(exposureMap[key]));
     });
-    Object.defineProperty(api, '@manifest', createReadOnlyValue(manifest_1["default"](manifests)));
+    Object.defineProperty(api, '@manifest', createReadOnlyValue((0, manifest_1["default"])(manifests)));
     Object.defineProperty(window, '@Neos:HostPluginAPI', createReadOnlyValue(api));
 }
 exports["default"] = createConsumerApi;
@@ -130,16 +132,19 @@ exports["default"] = createConsumerApi;
 "use strict";
 
 
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var createConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./createConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js"));
+exports.SynchronousMetaRegistry = exports.SynchronousRegistry = exports.readFromConsumerApi = exports.createConsumerApi = void 0;
+var createConsumerApi_1 = __importDefault(__webpack_require__(/*! ./createConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/createConsumerApi.js"));
 exports.createConsumerApi = createConsumerApi_1["default"];
-var readFromConsumerApi_1 = tslib_1.__importDefault(__webpack_require__(/*! ./readFromConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js"));
+var readFromConsumerApi_1 = __importDefault(__webpack_require__(/*! ./readFromConsumerApi */ "./node_modules/@neos-project/neos-ui-extensibility/dist/readFromConsumerApi.js"));
 exports.readFromConsumerApi = readFromConsumerApi_1["default"];
 var index_1 = __webpack_require__(/*! ./registry/index */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/index.js");
 exports.SynchronousRegistry = index_1.SynchronousRegistry;
 exports.SynchronousMetaRegistry = index_1.SynchronousMetaRegistry;
-exports["default"] = readFromConsumerApi_1["default"]('manifest');
+exports["default"] = (0, readFromConsumerApi_1["default"])('manifest');
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -178,8 +183,38 @@ exports["default"] = function (manifests) {
 "use strict";
 
 
+var __read = undefined && undefined.__read || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o),
+        r,
+        ar = [],
+        e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+            ar.push(r.value);
+        }
+    } catch (error) {
+        e = { error: error };
+    } finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+};
+var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 function readFromConsumerApi(key) {
     return function () {
         var _a;
@@ -187,10 +222,10 @@ function readFromConsumerApi(key) {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        if (window['@Neos:HostPluginAPI'] && window['@Neos:HostPluginAPI']["@" + key]) {
-            return (_a = window['@Neos:HostPluginAPI'])["@" + key].apply(_a, tslib_1.__spread(args));
+        if (window['@Neos:HostPluginAPI'] && window['@Neos:HostPluginAPI']["@".concat(key)]) {
+            return (_a = window['@Neos:HostPluginAPI'])["@".concat(key)].apply(_a, __spreadArray([], __read(args), false));
         }
-        throw new Error("You are trying to read from a consumer api that hasn't been initialized yet!");
+        throw new Error('You are trying to read from a consumer api that hasn\'t been initialized yet!');
     };
 }
 exports["default"] = readFromConsumerApi;
@@ -231,11 +266,33 @@ exports["default"] = AbstractRegistry;
 "use strict";
 
 
+var __extends = undefined && undefined.__extends || function () {
+    var _extendStatics = function extendStatics(d, b) {
+        _extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+            d.__proto__ = b;
+        } || function (d, b) {
+            for (var p in b) {
+                if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+            }
+        };
+        return _extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        _extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
+var SynchronousRegistry_1 = __importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
 var SynchronousMetaRegistry = function (_super) {
-    tslib_1.__extends(SynchronousMetaRegistry, _super);
+    __extends(SynchronousMetaRegistry, _super);
     function SynchronousMetaRegistry() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -262,12 +319,34 @@ exports["default"] = SynchronousMetaRegistry;
 "use strict";
 
 
+var __extends = undefined && undefined.__extends || function () {
+    var _extendStatics = function extendStatics(d, b) {
+        _extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+            d.__proto__ = b;
+        } || function (d, b) {
+            for (var p in b) {
+                if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+            }
+        };
+        return _extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        _extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var AbstractRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./AbstractRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js"));
-var positional_array_sorter_1 = tslib_1.__importDefault(__webpack_require__(/*! @neos-project/positional-array-sorter */ "./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js"));
+var AbstractRegistry_1 = __importDefault(__webpack_require__(/*! ./AbstractRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/AbstractRegistry.js"));
+var positional_array_sorter_1 = __importDefault(__webpack_require__(/*! @neos-project/positional-array-sorter */ "./node_modules/@neos-project/positional-array-sorter/dist/positionalArraySorter.js"));
 var SynchronousRegistry = function (_super) {
-    tslib_1.__extends(SynchronousRegistry, _super);
+    __extends(SynchronousRegistry, _super);
     function SynchronousRegistry(description) {
         var _this = _super.call(this, description) || this;
         _this._registry = [];
@@ -311,7 +390,7 @@ var SynchronousRegistry = function (_super) {
         var unsortedChildren = this._registry.filter(function (item) {
             return item.key.indexOf(searchKey + '/') === 0;
         });
-        return positional_array_sorter_1["default"](unsortedChildren);
+        return (0, positional_array_sorter_1["default"])(unsortedChildren);
     };
     SynchronousRegistry.prototype.getChildrenAsObject = function (searchKey) {
         var result = {};
@@ -335,7 +414,7 @@ var SynchronousRegistry = function (_super) {
         }));
     };
     SynchronousRegistry.prototype._getAllWrapped = function () {
-        return positional_array_sorter_1["default"](this._registry);
+        return (0, positional_array_sorter_1["default"])(this._registry);
     };
     SynchronousRegistry.prototype.getAllAsObject = function () {
         var result = {};
@@ -366,11 +445,14 @@ exports["default"] = SynchronousRegistry;
 "use strict";
 
 
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var SynchronousRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
+exports.SynchronousMetaRegistry = exports.SynchronousRegistry = void 0;
+var SynchronousRegistry_1 = __importDefault(__webpack_require__(/*! ./SynchronousRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousRegistry.js"));
 exports.SynchronousRegistry = SynchronousRegistry_1["default"];
-var SynchronousMetaRegistry_1 = tslib_1.__importDefault(__webpack_require__(/*! ./SynchronousMetaRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js"));
+var SynchronousMetaRegistry_1 = __importDefault(__webpack_require__(/*! ./SynchronousMetaRegistry */ "./node_modules/@neos-project/neos-ui-extensibility/dist/registry/SynchronousMetaRegistry.js"));
 exports.SynchronousMetaRegistry = SynchronousMetaRegistry_1["default"];
 //# sourceMappingURL=index.js.map
 
@@ -1006,9 +1088,6 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 exports.default = makeCustomImageEditor;
 
 var _react = __webpack_require__(/*! react */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js");
@@ -1029,59 +1108,38 @@ var _neosUiI18n2 = _interopRequireDefault(_neosUiI18n);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 function makeCustomImageEditor(DefaultImageEditor) {
     var _class, _temp2;
 
-    return _temp2 = _class = function (_PureComponent) {
-        _inherits(MyImageEditor, _PureComponent);
+    return _temp2 = _class = class MyImageEditor extends _react.PureComponent {
+        constructor() {
+            var _temp, _this;
 
-        function MyImageEditor() {
-            var _ref;
-
-            var _temp, _this, _ret;
-
-            _classCallCheck(this, MyImageEditor);
-
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-            }
-
-            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MyImageEditor.__proto__ || Object.getPrototypeOf(MyImageEditor)).call.apply(_ref, [this].concat(args))), _this), _this.handleChangeColor = function (newColor) {
+            return _temp = _this = super(...arguments), this.handleChangeColor = function (newColor) {
                 _this.props.commit(newColor.hex);
-            }, _temp), _possibleConstructorReturn(_this, _ret);
+            }, _temp;
         }
 
-        _createClass(MyImageEditor, [{
-            key: 'render',
-            value: function render() {
-                var _props = this.props,
-                    value = _props.value,
-                    commit = _props.commit,
-                    options = _props.options,
-                    i18nRegistry = _props.i18nRegistry;
+        render() {
+            var _props = this.props,
+                value = _props.value,
+                commit = _props.commit,
+                options = _props.options,
+                i18nRegistry = _props.i18nRegistry;
 
 
-                return _react2.default.createElement(
-                    'div',
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(DefaultImageEditor, this.props),
+                _react2.default.createElement(
+                    'b',
                     null,
-                    _react2.default.createElement(DefaultImageEditor, this.props),
-                    _react2.default.createElement(
-                        'b',
-                        null,
-                        'Something below'
-                    )
-                );
-            }
-        }]);
-
-        return MyImageEditor;
-    }(_react.PureComponent), _class.propTypes = {
+                    'Something below'
+                )
+            );
+        }
+    }, _class.propTypes = {
         value: _propTypes2.default.oneOfType([_propTypes2.default.shape({ __identifier: _propTypes2.default.string }), _propTypes2.default.string]),
         commit: _propTypes2.default.func.isRequired,
         validationErrors: _propTypes2.default.array,
