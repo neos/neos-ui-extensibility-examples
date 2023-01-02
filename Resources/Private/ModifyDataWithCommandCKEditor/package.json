@@ -7,7 +7,8 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "^5.3.4"
+    "@neos-project/neos-ui-extensibility": "^8.2.0",
+    "@neos-project/build-essentials": "^8.2.0"
   },
   "neos": {
     "buildTargetDirectory": "../../Public/ModifyDataWithCommandCKEditor"
