@@ -6,7 +6,6 @@ manifest('Neos.Neos.Ui.ExtensibilityExamples:ReplacingComponentsViaUnplannedExte
     const containerRegistry = globalRegistry.get('containers');
 
     const OriginalLeftSideBar = containerRegistry.get('LeftSideBar')
-
     containerRegistry.set('LeftSideBar', makeAdjustedSidebar(OriginalLeftSideBar));
 
 });
