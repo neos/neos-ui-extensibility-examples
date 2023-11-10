@@ -1,23 +1,11 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {TextInput} from '@neos-project/react-ui-components';
-import {neos} from '@neos-project/neos-ui-decorators';
-import I18n from '@neos-project/neos-ui-i18n';
-
 
 export default function makeCustomImageEditor(DefaultImageEditor) {
     return class MyImageEditor extends PureComponent {
 
         static propTypes = {
-            value: PropTypes.oneOfType([
-                PropTypes.shape({__identifier: PropTypes.string}),
-                PropTypes.string
-            ]),
             commit: PropTypes.func.isRequired,
-            validationErrors: PropTypes.array,
-            options: PropTypes.object,
-
-            i18nRegistry: PropTypes.object.isRequired
         };
 
         handleChangeColor = newColor => {
@@ -25,8 +13,6 @@ export default function makeCustomImageEditor(DefaultImageEditor) {
         };
 
         render() {
-            const {value, commit, options, i18nRegistry} = this.props;
-
             return (<div>
                 <DefaultImageEditor {...this.props} />
                 <b>Something below</b>

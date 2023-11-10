@@ -1,5 +1,4 @@
 import manifest from '@neos-project/neos-ui-extensibility';
-import {$add, $get} from 'plow-js';
 import ExamplePlugin from './examplePlugin';
 import ExampleButton from './ExampleButton';
 
@@ -13,9 +12,15 @@ import ExampleButton from './ExampleButton';
 //
 // it needs to return the updated ckEditorConfiguration.
 const addExamplePlugin = (ckEditorConfiguration, options) => {
-    if ($get(['formatting', 'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan'], options.editorOptions)) {
-        ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
-        return $add('plugins', ExamplePlugin, ckEditorConfiguration);
+    const formattingOptions = options?.editorOptions?.formatting
+    if (formattingOptions['Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan'] === true) {
+        return {
+            ...ckEditorConfiguration,
+            plugins: [
+                ...(ckEditorConfiguration.plugins ?? []),
+                ExamplePlugin
+            ]
+        };
     }
     return ckEditorConfiguration;
 };
@@ -28,8 +33,8 @@ manifest('Neos.Neos.Ui.ExtensibilityExamples:CustomStylingForCkEditor', {}, glob
         commandName: 'highlightCommand',
         // the path in isActive must match the commandName from the line above, to ensure the active state
         // of the button automatically toggles.
-        isActive: $get('highlightCommand'),
-        isVisible: $get(['formatting', 'Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan']),
+        isActive: editorOptions => editorOptions?.highlightCommand,
+        isVisible: formattingUnderCursor => formattingUnderCursor?.formatting['Neos.Neos.Ui.ExtensibilityExamples:MyCustomSpan'] === true,
 
         component: ExampleButton,
         icon: 'plus-square',

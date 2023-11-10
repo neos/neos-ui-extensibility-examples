@@ -1,13 +1,17 @@
 import manifest from '@neos-project/neos-ui-extensibility';
-import {$add, $get} from 'plow-js';
 import ModifyDataPlugin from './modifyDataPlugin';
 import ModifyDataButton from './ModifyDataButton';
 
 const addPlugin = (Plugin, isEnabled) => (ckEditorConfiguration, options) => {
     // we duplicate editorOptions here so it would be possible to write smth like `$get('formatting.sup')`
     if (!isEnabled || isEnabled(options.editorOptions, options)) {
-        ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
-        return $add('plugins', Plugin, ckEditorConfiguration);
+        return {
+            ...ckEditorConfiguration,
+            plugins: [
+                ...(ckEditorConfiguration.plugins ?? []),
+                Plugin
+            ]
+        };
     }
     return ckEditorConfiguration;
 };
@@ -17,8 +21,8 @@ manifest('Neos.Neos.Ui.ExtensibilityExamples:ModifyDataWithCommandCKEditor', {},
 
     richtextToolbar.set('modifyDataPlugin', {
         commandName: 'modifyDataCommand',
-        isActive: $get('highlightCommand'),
-        isVisible: $get(['formatting', 'Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand']),
+        isActive: editorOptions => editorOptions?.modifyDataCommand,
+        isVisible: formattingUnderCursor => formattingUnderCursor?.formatting['Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand'] === true,
         component: ModifyDataButton,
         icon: 'search-plus',
         tooltip: 'Create an example command',
