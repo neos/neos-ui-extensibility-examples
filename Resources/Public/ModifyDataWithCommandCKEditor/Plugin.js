@@ -111,14 +111,6 @@
     }
   });
 
-  // node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js
-  var require_plow_js = __commonJS({
-    "node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/plow-js/index.js"(exports, module) {
-      init_readFromConsumerApi();
-      module.exports = readFromConsumerApi("vendor")().plow;
-    }
-  });
-
   // node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js
   var require_ckeditor5_exports = __commonJS({
     "node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/ckeditor5-exports/index.js"(exports, module) {
@@ -206,12 +198,11 @@
   });
 
   // src/ModifyDataButton.js
-  var import_react, import_prop_types, import_plow_js, import_react_ui_components, import_neos_ui_decorators, import_neos_ui_ckeditor5_bindings, import_react_redux, import_neos_ui_redux_store, ModifyDataButton;
+  var import_react, import_prop_types, import_react_ui_components, import_neos_ui_decorators, import_neos_ui_ckeditor5_bindings, import_react_redux, import_neos_ui_redux_store, ModifyDataButton;
   var init_ModifyDataButton = __esm({
     "src/ModifyDataButton.js"() {
       import_react = __toESM(require_react());
       import_prop_types = __toESM(require_prop_types());
-      import_plow_js = __toESM(require_plow_js());
       import_react_ui_components = __toESM(require_react_ui_components());
       import_neos_ui_decorators = __toESM(require_neos_ui_decorators());
       import_neos_ui_ckeditor5_bindings = __toESM(require_neos_ui_ckeditor5_bindings());
@@ -239,8 +230,8 @@
         tooltip: import_prop_types.default.string
       };
       ModifyDataButton = __decorateClass([
-        (0, import_react_redux.connect)((0, import_plow_js.$transform)({
-          fusionPath: (0, import_plow_js.$get)("cr.nodes.focused.fusionPath")
+        (0, import_react_redux.connect)((state) => ({
+          fusionPath: state?.cr?.nodes?.focused?.fusionPath
         }), {
           persistChanges: import_neos_ui_redux_store.actions.Changes.persistChanges,
           commenceNodeCreation: import_neos_ui_redux_store.actions.CR.Nodes.commenceCreation
@@ -254,17 +245,21 @@
 
   // src/manifest.js
   var manifest_exports = {};
-  var import_plow_js2, addPlugin;
+  var addPlugin;
   var init_manifest2 = __esm({
     "src/manifest.js"() {
       init_dist();
-      import_plow_js2 = __toESM(require_plow_js());
       init_modifyDataPlugin();
       init_ModifyDataButton();
       addPlugin = (Plugin2, isEnabled) => (ckEditorConfiguration, options) => {
         if (!isEnabled || isEnabled(options.editorOptions, options)) {
-          ckEditorConfiguration.plugins = ckEditorConfiguration.plugins || [];
-          return (0, import_plow_js2.$add)("plugins", Plugin2, ckEditorConfiguration);
+          return {
+            ...ckEditorConfiguration,
+            plugins: [
+              ...ckEditorConfiguration.plugins ?? [],
+              Plugin2
+            ]
+          };
         }
         return ckEditorConfiguration;
       };
@@ -272,8 +267,8 @@
         const richtextToolbar = globalRegistry.get("ckEditor5").get("richtextToolbar");
         richtextToolbar.set("modifyDataPlugin", {
           commandName: "modifyDataCommand",
-          isActive: (0, import_plow_js2.$get)("modifyDataCommand"),
-          isVisible: (0, import_plow_js2.$get)(["formatting", "Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand"]),
+          isActive: (editorOptions) => editorOptions?.modifyDataCommand,
+          isVisible: (formattingUnderCursor) => formattingUnderCursor?.formatting["Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand"] === true,
           component: ModifyDataButton,
           icon: "search-plus",
           tooltip: "Create an example command"
