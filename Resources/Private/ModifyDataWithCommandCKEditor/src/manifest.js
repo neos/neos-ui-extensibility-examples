@@ -17,7 +17,7 @@ manifest('Neos.Neos.Ui.ExtensibilityExamples:ModifyDataWithCommandCKEditor', {},
 
     richtextToolbar.set('modifyDataPlugin', {
         commandName: 'modifyDataCommand',
-        isActive: $get('highlightCommand'),
+        isActive: $get('modifyDataCommand'),
         isVisible: $get(['formatting', 'Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand']),
         component: ModifyDataButton,
         icon: 'search-plus',

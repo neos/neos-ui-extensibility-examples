@@ -272,7 +272,7 @@
         const richtextToolbar = globalRegistry.get("ckEditor5").get("richtextToolbar");
         richtextToolbar.set("modifyDataPlugin", {
           commandName: "modifyDataCommand",
-          isActive: (0, import_plow_js2.$get)("highlightCommand"),
+          isActive: (0, import_plow_js2.$get)("modifyDataCommand"),
           isVisible: (0, import_plow_js2.$get)(["formatting", "Neos.Neos.Ui.ExtensibilityExamples:modifyDataCommand"]),
           component: ModifyDataButton,
           icon: "search-plus",
